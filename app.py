@@ -21,7 +21,7 @@ st.markdown(
             WEB MODEL &nbsp;•&nbsp; MACHINE LEARNING ASSIGNMENT
         </div>
         <div style="font-size: 34px; font-weight: 800; margin: 8px 0 6px 0;">
-            🤖 เว็บไซต์ Machine Learning
+            🤖 Machine Learning
         </div>
         <div style="font-size: 15px; opacity: 0.92; max-width: 620px;">
             จัดทำขึ้นเพื่อส่งงานวิชา Web Model โดยรวมโมเดล Machine Learning 6 แบบไว้ในเว็บเดียว
