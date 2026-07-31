@@ -7,11 +7,11 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.ensemble import RandomForestClassifier
 
-from ml_utils import load_csv, show_classification_metrics
+from ml_utils import load_csv, show_classification_metrics, page_header
 
 st.set_page_config(page_title="Ensemble - Student Pass Prediction", page_icon="6️⃣", layout="wide")
-st.title("6️⃣ Ensemble (Random Forest)")
-st.caption("ทำนายผลการสอบผ่าน/ไม่ผ่านของนักเรียน (Pass Prediction)")
+page_header("6️⃣", "Ensemble (Random Forest)", "ทำนายผลการสอบผ่าน/ไม่ผ่านของนักเรียน (Pass Prediction)",
+            task_type="Classification", color="#7C3AED")
 
 df = load_csv("data/student_performance.csv")
 TARGET = "passed"

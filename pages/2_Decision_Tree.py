@@ -3,11 +3,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
-from ml_utils import load_csv, show_classification_metrics
+from ml_utils import load_csv, show_classification_metrics, page_header
 
 st.set_page_config(page_title="Decision Tree - Heart Disease", page_icon="2️⃣", layout="wide")
-st.title("2️⃣ Decision Tree")
-st.caption("ทำนายโรคหัวใจ (Heart Disease) ด้วยต้นไม้ตัดสินใจ")
+page_header("2️⃣", "Decision Tree", "ทำนายโรคหัวใจ (Heart Disease) ด้วยต้นไม้ตัดสินใจ",
+            task_type="Classification", color="#0D9488")
 
 df = load_csv("data/heart.csv")
 FEATURES = [c for c in df.columns if c != "HeartDisease"]

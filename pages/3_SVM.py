@@ -6,11 +6,11 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.svm import SVC
 
-from ml_utils import load_csv, show_classification_metrics
+from ml_utils import load_csv, show_classification_metrics, page_header
 
 st.set_page_config(page_title="SVM - Student Stress", page_icon="3️⃣", layout="wide")
-st.title("3️⃣ Support Vector Machine (SVM)")
-st.caption("ทำนายระดับความเครียดของนักเรียน/นักศึกษา (Stress Level)")
+page_header("3️⃣", "Support Vector Machine (SVM)", "ทำนายระดับความเครียดของนักเรียน/นักศึกษา (Stress Level)",
+            task_type="Classification", color="#EA580C")
 
 df = load_csv("data/student_stress.csv")
 TARGET = "Stress_Level"

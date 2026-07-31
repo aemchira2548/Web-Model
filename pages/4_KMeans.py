@@ -5,11 +5,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
-from ml_utils import load_csv
+from ml_utils import load_csv, page_header
 
 st.set_page_config(page_title="K-Means - Loan Applicants", page_icon="4️⃣", layout="wide")
-st.title("4️⃣ K-Means Clustering")
-st.caption("จัดกลุ่มผู้ขอสินเชื่อ (Loan Applicants) แบบ Unsupervised Learning")
+page_header("4️⃣", "K-Means Clustering", "จัดกลุ่มผู้ขอสินเชื่อ (Loan Applicants) แบบ Unsupervised Learning",
+            task_type="Clustering", color="#DB2777")
 
 df = load_csv("data/loan_data.csv")
 NUM_FEATURES = ["person_age", "person_income", "person_emp_exp", "loan_amnt",

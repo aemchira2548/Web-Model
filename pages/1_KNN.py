@@ -4,11 +4,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.neighbors import KNeighborsClassifier
 
-from ml_utils import load_csv, show_classification_metrics
+from ml_utils import load_csv, show_classification_metrics, page_header
 
 st.set_page_config(page_title="KNN - Heart Disease", page_icon="1️⃣", layout="wide")
-st.title("1️⃣ K-Nearest Neighbor")
-st.caption("ทำนายโรคหัวใจ (Heart Disease) จากข้อมูลผู้ป่วย")
+page_header("1️⃣", "K-Nearest Neighbor", "ทำนายโรคหัวใจ (Heart Disease) จากข้อมูลผู้ป่วย",
+            task_type="Classification", color="#4F46E5")
 
 df = load_csv("data/heart.csv")
 FEATURES = [c for c in df.columns if c != "HeartDisease"]

@@ -8,11 +8,11 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
-from ml_utils import load_csv
+from ml_utils import load_csv, page_header
 
 st.set_page_config(page_title="Regression - Student Performance", page_icon="5️⃣", layout="wide")
-st.title("5️⃣ Regression")
-st.caption("ทำนายคะแนนการบ้าน (Assignment Score) ของนักเรียน")
+page_header("5️⃣", "Regression", "ทำนายคะแนนการบ้าน (Assignment Score) ของนักเรียน",
+            task_type="Regression", color="#059669")
 
 df = load_csv("data/student_performance.csv")
 TARGET = "assignment_score"
