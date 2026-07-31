@@ -21,11 +21,11 @@ st.markdown(
             WEB MODEL &nbsp;•&nbsp; MACHINE LEARNING ASSIGNMENT
         </div>
         <div style="font-size: 34px; font-weight: 800; margin: 8px 0 6px 0;">
-            🤖 Machine Learning Showcase
+            🤖 เว็บไซต์ Machine Learning
         </div>
         <div style="font-size: 15px; opacity: 0.92; max-width: 620px;">
-            รวม 6 เทคนิค Machine Learning ไว้ในเว็บไซต์เดียว ตั้งแต่ Classification,
-            Clustering ไปจนถึง Regression — พร้อมทดลองทำนายผลได้จริง
+            จัดทำขึ้นเพื่อส่งงานวิชา Web Model โดยรวมโมเดล Machine Learning 6 แบบไว้ในเว็บเดียว
+            ได้แก่ KNN, Decision Tree, SVM, K-Means, Regression และ Random Forest
         </div>
     </div>
     """,
