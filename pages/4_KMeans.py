@@ -70,3 +70,36 @@ st.dataframe(data.groupby("Cluster")[NUM_FEATURES].mean().round(2), use_containe
 
 st.subheader("จำนวนสมาชิกในแต่ละกลุ่ม")
 st.bar_chart(data["Cluster"].value_counts().sort_index())
+
+st.divider()
+st.subheader("ลองคำนวณด้วยข้อมูลของคุณ")
+st.caption("กรอกข้อมูลผู้ขอสินเชื่อ ระบบจะคำนวณว่าใกล้เคียงกับกลุ่มไหนมากที่สุด")
+
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    in_age = st.number_input("อายุ", 18, 100, 30)
+    in_income = st.number_input("รายได้ต่อปี", 0, 500000, 60000, 1000)
+with col2:
+    in_emp_exp = st.number_input("ประสบการณ์ทำงาน (ปี)", 0, 50, 3)
+    in_loan_amnt = st.number_input("จำนวนเงินกู้", 0, 100000, 10000, 500)
+with col3:
+    in_int_rate = st.number_input("อัตราดอกเบี้ย (%)", 0.0, 30.0, 12.0, 0.1)
+    in_percent_income = st.number_input("สัดส่วนเงินกู้ต่อรายได้", 0.0, 1.0, 0.2, 0.01)
+with col4:
+    in_hist_length = st.number_input("ความยาวประวัติเครดิต (ปี)", 0, 40, 5)
+    in_credit_score = st.number_input("Credit Score", 300, 900, 650)
+
+if st.button("คำนวณกลุ่ม", type="primary"):
+    new_point = pd.DataFrame([[in_age, in_income, in_emp_exp, in_loan_amnt,
+                                in_int_rate, in_percent_income,
+                                in_hist_length, in_credit_score]], columns=NUM_FEATURES)
+    new_scaled = scaler.transform(new_point)
+    predicted_cluster = model.predict(new_scaled)[0]
+    st.success(f"🎯 ข้อมูลนี้ใกล้เคียงกับ **Cluster {predicted_cluster}** มากที่สุด")
+    st.write("ค่าเฉลี่ยของกลุ่มนี้เทียบกับข้อมูลที่กรอก:")
+    profile = data[data["Cluster"] == predicted_cluster][NUM_FEATURES].mean().round(2)
+    compare_df = pd.DataFrame({
+        "ค่าเฉลี่ยของกลุ่ม": profile,
+        "ข้อมูลที่คุณกรอก": new_point.iloc[0],
+    })
+    st.dataframe(compare_df, use_container_width=True)
