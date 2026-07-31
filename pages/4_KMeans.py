@@ -62,7 +62,7 @@ for c in sorted(plot_df["Cluster"].unique()):
 ax2.set_xlabel("PC1")
 ax2.set_ylabel("PC2")
 ax2.legend()
-ax2.set_title("การกระจายตัวของกลุ่ม (PCA 2D)")
+ax2.set_title("Cluster Distribution (PCA 2D)")
 st.pyplot(fig2, use_container_width=False)
 
 st.subheader("ค่าเฉลี่ยของแต่ละกลุ่ม (Cluster Profile)")
