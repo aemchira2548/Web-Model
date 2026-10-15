@@ -8,7 +8,7 @@ from sklearn.svm import SVC
 
 from ml_utils import load_csv, show_classification_metrics, page_header
 
-st.set_page_config(page_title="SVM - Student Stress", page_icon="3️⃣", layout="wide")
+st.set_page_config(page_title="KNN - Heart Disease", page_icon="1️⃣", layout="wide")
 page_header("3️⃣", "Support Vector Machine (SVM)", "ทำนายระดับความเครียดของนักเรียน/นักศึกษา (Stress Level)",
             task_type="Classification", color="#EA580C")
 
