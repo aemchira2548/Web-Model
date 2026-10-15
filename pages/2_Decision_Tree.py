@@ -5,7 +5,6 @@ from sklearn.tree import DecisionTreeClassifier
 
 from ml_utils import load_csv, show_classification_metrics, page_header
 
-st.set_page_config(page_title="KNN - Heart Disease", page_icon="1️⃣", layout="wide")
 page_header("2️⃣", "Decision Tree", "ทำนายโรคหัวใจ (Heart Disease) ด้วยต้นไม้ตัดสินใจ",
             task_type="Classification", color="#0D9488")
 
