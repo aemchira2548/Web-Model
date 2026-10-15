@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 
 from ml_utils import load_csv, page_header
 
-st.set_page_config(page_title="K-Means - Loan Applicants", page_icon="4️⃣", layout="wide")
+st.set_page_config(page_title="KNN - Heart Disease", page_icon="1️⃣", layout="wide")
 page_header("4️⃣", "K-Means Clustering", "จัดกลุ่มผู้ขอสินเชื่อ (Loan Applicants) แบบ Unsupervised Learning",
             task_type="Clustering", color="#DB2777")
 
