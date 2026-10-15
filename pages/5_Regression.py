@@ -10,7 +10,6 @@ from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 from ml_utils import load_csv, page_header
 
-st.set_page_config(page_title="Regression - Student Performance", page_icon="5️⃣", layout="wide")
 page_header("5️⃣", "Regression", "ทำนายคะแนนการบ้าน (Assignment Score) ของนักเรียน",
             task_type="Regression", color="#059669")
 
